@@ -3,25 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: #000; /* Define your foreground color */
+  --background: rgba(255, 255, 255, 0.8); /* Define your background color */
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  z-index: 1;
+  margin: 0; 
+  overflow-x: hidden;
 }
+
+@media (max-width: 768px) {
+  body {
+    background-size: contain; /* Change to 'contain' on smaller screens if needed */
+  }
+}
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
